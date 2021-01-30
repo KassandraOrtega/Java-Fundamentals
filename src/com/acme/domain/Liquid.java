@@ -1,7 +1,5 @@
 package com.acme.domain;
 
-import com.acme.domain.Good.UnitOfMeasureType;
-
 public class Liquid extends Good {
 	private double radius;
 	

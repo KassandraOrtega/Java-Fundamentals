@@ -5,6 +5,18 @@ public class MyDate {
 	private byte day;
 	private short year;
 	
+	private static MyDate[] holidays;
+	
+	static { 
+		holidays = new MyDate[6];
+		holidays[0] = new MyDate(1, 1, 2016);
+		holidays[1] = new MyDate(5, 30, 2016);
+		holidays[2] = new MyDate(7, 4, 2016);
+		holidays[3] = new MyDate(9, 5, 2016);
+		holidays[4] = new MyDate(11, 24, 2016);
+		holidays[5] = new MyDate(12, 25, 2016);
+	}
+	
 	public MyDate(){
 		this(1,1,1900);
 	}
@@ -80,5 +92,26 @@ public class MyDate {
 			case 2: return day <= 28 || (day == 29 && year % 4 == 0);
 		}
 		return true;
+	}
+	
+	public boolean equals(Object o) {
+		if (o instanceof MyDate) {
+			MyDate d = (MyDate) o;
+			if((d.day == day) && (d.month == month) && (d.year == year)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static MyDate[] getHolidays() {
+		return holidays;
+	}
+	
+	public static void listHolidays() {
+		System.out.println("the holidays are:");
+		for (int x = 0; x < holidays.length; x++) {
+			System.out.println(holidays[x]);
+		}
 	}
 }

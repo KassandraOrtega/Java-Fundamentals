@@ -4,6 +4,14 @@ import com.acme.utils.MyDate;
 public class TestMyDate{
 
 	public static void main(String[] args){
+		MyDate newYear = new MyDate(1,1,2009);
+		MyDate fiscalStart = new MyDate(1,1,2009);
+		
+		if (newYear.equals(fiscalStart)) 
+			System.out.println("These two dates are equal");
+		else
+		System.out.println("These two dates are not equal");
+		
 		MyDate date1 = new MyDate(11,11,1918);
 
 		MyDate date2 = new MyDate();
@@ -23,5 +31,6 @@ public class TestMyDate{
 		System.out.println(str3);
 		
 		MyDate.leapYears();
+		MyDate.listHolidays();
 	}
 }
